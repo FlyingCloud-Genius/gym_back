@@ -18,8 +18,20 @@
     <dependencies>
         <dependency>
             <groupId>com.gym.project</groupId>
-            <artifactId>gym_common</artifactId>
+            <artifactId>gym_domain</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.3.2</version>
         </dependency>
     </dependencies>
 

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gym.project.mapper.GymUserMapper">
+  <resultMap id="BaseResultMap" type="com.gym.project.domain.entity.GymUser">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="phone_num" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="national_id" jdbcType="VARCHAR" property="nationalId" />
+    <result column="invitor" jdbcType="VARCHAR" property="invitor" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="mail_address" jdbcType="VARCHAR" property="mailAddress" />
+    <result column="profession" jdbcType="VARCHAR" property="profession" />
+    <result column="annual_income" jdbcType="BIGINT" property="annualIncome" />
+    <result column="device_info" jdbcType="VARCHAR" property="deviceInfo" />
+    <result column="fitting_desire" jdbcType="VARCHAR" property="fittingDesire" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="modified_time" jdbcType="TIMESTAMP" property="modifiedTime" />
+    <result column="yn" jdbcType="INTEGER" property="yn" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, nick_name, phone_num, birthday, national_id, invitor, address, mail_address, 
+    profession, annual_income, device_info, fitting_desire, create_by, created_time, 
+    update_by, modified_time, yn, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from gym_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from gym_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymUser" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into gym_user (`name`, nick_name, phone_num, 
+      birthday, national_id, invitor, 
+      address, mail_address, profession, 
+      annual_income, device_info, fitting_desire, 
+      create_by, created_time, update_by, 
+      modified_time, yn, remark
+      )
+    values (#{name,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{phoneNum,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=TIMESTAMP}, #{nationalId,jdbcType=VARCHAR}, #{invitor,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{mailAddress,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, 
+      #{annualIncome,jdbcType=BIGINT}, #{deviceInfo,jdbcType=VARCHAR}, #{fittingDesire,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
+      #{modifiedTime,jdbcType=TIMESTAMP}, #{yn,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymUser" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into gym_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="nickName != null">
+        nick_name,
+      </if>
+      <if test="phoneNum != null">
+        phone_num,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="nationalId != null">
+        national_id,
+      </if>
+      <if test="invitor != null">
+        invitor,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="mailAddress != null">
+        mail_address,
+      </if>
+      <if test="profession != null">
+        profession,
+      </if>
+      <if test="annualIncome != null">
+        annual_income,
+      </if>
+      <if test="deviceInfo != null">
+        device_info,
+      </if>
+      <if test="fittingDesire != null">
+        fitting_desire,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="modifiedTime != null">
+        modified_time,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNum != null">
+        #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nationalId != null">
+        #{nationalId,jdbcType=VARCHAR},
+      </if>
+      <if test="invitor != null">
+        #{invitor,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="mailAddress != null">
+        #{mailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="annualIncome != null">
+        #{annualIncome,jdbcType=BIGINT},
+      </if>
+      <if test="deviceInfo != null">
+        #{deviceInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="fittingDesire != null">
+        #{fittingDesire,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedTime != null">
+        #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gym.project.domain.entity.GymUser">
+    <!--@mbg.generated-->
+    update gym_user
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNum != null">
+        phone_num = #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nationalId != null">
+        national_id = #{nationalId,jdbcType=VARCHAR},
+      </if>
+      <if test="invitor != null">
+        invitor = #{invitor,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="mailAddress != null">
+        mail_address = #{mailAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        profession = #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="annualIncome != null">
+        annual_income = #{annualIncome,jdbcType=BIGINT},
+      </if>
+      <if test="deviceInfo != null">
+        device_info = #{deviceInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="fittingDesire != null">
+        fitting_desire = #{fittingDesire,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedTime != null">
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        yn = #{yn,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gym.project.domain.entity.GymUser">
+    <!--@mbg.generated-->
+    update gym_user
+    set `name` = #{name,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      phone_num = #{phoneNum,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      national_id = #{nationalId,jdbcType=VARCHAR},
+      invitor = #{invitor,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      mail_address = #{mailAddress,jdbcType=VARCHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      annual_income = #{annualIncome,jdbcType=BIGINT},
+      device_info = #{deviceInfo,jdbcType=VARCHAR},
+      fitting_desire = #{fittingDesire,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      yn = #{yn,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

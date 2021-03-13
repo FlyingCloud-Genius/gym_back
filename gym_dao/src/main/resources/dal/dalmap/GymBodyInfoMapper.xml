@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gym.project.mapper.GymBodyInfoMapper">
+  <resultMap id="BaseResultMap" type="com.gym.project.domain.entity.GymBodyInfo">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="customer_id" jdbcType="BIGINT" property="customerId" />
+    <result column="unique_key" jdbcType="VARCHAR" property="uniqueKey" />
+    <result column="height" jdbcType="DECIMAL" property="height" />
+    <result column="weight" jdbcType="DECIMAL" property="weight" />
+    <result column="fat_rate" jdbcType="DECIMAL" property="fatRate" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="modified_time" jdbcType="TIMESTAMP" property="modifiedTime" />
+    <result column="yn" jdbcType="INTEGER" property="yn" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, customer_id, unique_key, height, weight, fat_rate, create_by, created_time, update_by, 
+    modified_time, yn, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from gym_body_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from gym_body_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymBodyInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into gym_body_info (customer_id, unique_key, height, 
+      weight, fat_rate, create_by, 
+      created_time, update_by, modified_time, 
+      yn, remark)
+    values (#{customerId,jdbcType=BIGINT}, #{uniqueKey,jdbcType=VARCHAR}, #{height,jdbcType=DECIMAL}, 
+      #{weight,jdbcType=DECIMAL}, #{fatRate,jdbcType=DECIMAL}, #{createBy,jdbcType=VARCHAR}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{modifiedTime,jdbcType=TIMESTAMP}, 
+      #{yn,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymBodyInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into gym_body_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="uniqueKey != null">
+        unique_key,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="fatRate != null">
+        fat_rate,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="modifiedTime != null">
+        modified_time,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="customerId != null">
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="uniqueKey != null">
+        #{uniqueKey,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=DECIMAL},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="fatRate != null">
+        #{fatRate,jdbcType=DECIMAL},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedTime != null">
+        #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gym.project.domain.entity.GymBodyInfo">
+    <!--@mbg.generated-->
+    update gym_body_info
+    <set>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="uniqueKey != null">
+        unique_key = #{uniqueKey,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=DECIMAL},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="fatRate != null">
+        fat_rate = #{fatRate,jdbcType=DECIMAL},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedTime != null">
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        yn = #{yn,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gym.project.domain.entity.GymBodyInfo">
+    <!--@mbg.generated-->
+    update gym_body_info
+    set customer_id = #{customerId,jdbcType=BIGINT},
+      unique_key = #{uniqueKey,jdbcType=VARCHAR},
+      height = #{height,jdbcType=DECIMAL},
+      weight = #{weight,jdbcType=DECIMAL},
+      fat_rate = #{fatRate,jdbcType=DECIMAL},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      yn = #{yn,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
