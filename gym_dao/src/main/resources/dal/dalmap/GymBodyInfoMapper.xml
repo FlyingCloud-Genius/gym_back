@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gym.project.mapper.GymBodyInfoMapper">
-  <resultMap id="BaseResultMap" type="com.gym.project.domain.entity.GymBodyInfo">
+  <resultMap id="BaseResultMap" type="com.gym.project.domain.gym.GymBodyInfo">
     <!--@mbg.generated-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="customer_id" jdbcType="BIGINT" property="customerId" />
@@ -33,7 +33,7 @@
     delete from gym_body_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymBodyInfo" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.gym.GymBodyInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into gym_body_info (customer_id, unique_key, height, 
       weight, fat_rate, create_by, 
@@ -44,7 +44,7 @@
       #{createdTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{modifiedTime,jdbcType=TIMESTAMP}, 
       #{yn,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymBodyInfo" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.gym.GymBodyInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into gym_body_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -118,7 +118,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gym.project.domain.entity.GymBodyInfo">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gym.project.domain.gym.GymBodyInfo">
     <!--@mbg.generated-->
     update gym_body_info
     <set>
@@ -158,7 +158,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gym.project.domain.entity.GymBodyInfo">
+  <update id="updateByPrimaryKey" parameterType="com.gym.project.domain.gym.GymBodyInfo">
     <!--@mbg.generated-->
     update gym_body_info
     set customer_id = #{customerId,jdbcType=BIGINT},

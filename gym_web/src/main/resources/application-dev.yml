@@ -1,0 +1,51 @@
+server:
+  port: 80
+  servlet:
+    context-path: /
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # tomcat最大线程数，默认为200
+    max-threads: 10
+    # Tomcat启动初始化的线程数，默认值25
+    min-spare-threads: 4
+
+# 日志配置
+logging:
+  level:
+    com.jd: debug
+    org.springframework: warn
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/gym_standard?allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=utf8
+    username: root
+    password: woshiyyt
+    maxActive: 20
+    initialSize: 5
+    maxWait: 60000
+    minIdle: 5
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    additional-paths: wormhole-web/src/main/java
+    additional-exclude: WEB-INF/**
+    druid:
+      stat-view-servlet:
+        enabled: false
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: admin
+        login-password: 123
+        allow: 127.0.0.1
+        #deny: 192.168.16.111
+      web-stat-filter:
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"

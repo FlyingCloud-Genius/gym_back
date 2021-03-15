@@ -1,7 +1,7 @@
 package com.gym.project.mapper;
 
 
-import com.gym.project.domain.entity.GymCardInfo;
+import com.gym.project.domain.gym.GymCardInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

@@ -1,6 +1,6 @@
 package com.gym.project.mapper;
 
-import com.gym.project.domain.entity.GymCustomerPhoto;
+import com.gym.project.domain.gym.GymCustomerPhoto;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

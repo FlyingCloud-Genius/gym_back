@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>com.gym.project</groupId>
-            <artifactId>gym_domain</artifactId>
+            <artifactId>gym_dao</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

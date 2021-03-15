@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gym.project.mapper.GymUserMapper">
-  <resultMap id="BaseResultMap" type="com.gym.project.domain.entity.GymUser">
+  <resultMap id="BaseResultMap" type="com.gym.project.domain.gym.GymUser">
     <!--@mbg.generated-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -41,7 +41,7 @@
     delete from gym_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymUser" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.gym.GymUser" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into gym_user (`name`, nick_name, phone_num, 
       birthday, national_id, invitor, 
@@ -58,7 +58,7 @@
       #{modifiedTime,jdbcType=TIMESTAMP}, #{yn,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymUser" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.gym.GymUser" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into gym_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -174,7 +174,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gym.project.domain.entity.GymUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gym.project.domain.gym.GymUser">
     <!--@mbg.generated-->
     update gym_user
     <set>
@@ -235,7 +235,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gym.project.domain.entity.GymUser">
+  <update id="updateByPrimaryKey" parameterType="com.gym.project.domain.gym.GymUser">
     <!--@mbg.generated-->
     update gym_user
     set `name` = #{name,jdbcType=VARCHAR},

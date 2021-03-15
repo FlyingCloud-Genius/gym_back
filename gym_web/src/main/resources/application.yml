@@ -1,0 +1,19 @@
+wechat:
+  appid:
+  appsecret:
+
+spring:
+  # 环境 dev|test|pro
+  profiles:
+    active: @spring.profiles.active@
+  # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  # 服务模块
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: true
+    aop:
+      auto: true

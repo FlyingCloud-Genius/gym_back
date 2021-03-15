@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gym.project.mapper.GymCustomerPhotoMapper">
-  <resultMap id="BaseResultMap" type="com.gym.project.domain.entity.GymCustomerPhoto">
+  <resultMap id="BaseResultMap" type="com.gym.project.domain.gym.GymCustomerPhoto">
     <!--@mbg.generated-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="customer_id" jdbcType="BIGINT" property="customerId" />
@@ -30,7 +30,7 @@
     delete from gym_customer_photo
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymCustomerPhoto" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.gym.GymCustomerPhoto" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into gym_customer_photo (customer_id, photo_address, create_by, 
       created_time, update_by, modified_time, 
@@ -39,7 +39,7 @@
       #{createdTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{modifiedTime,jdbcType=TIMESTAMP}, 
       #{yn,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.entity.GymCustomerPhoto" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gym.project.domain.gym.GymCustomerPhoto" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into gym_customer_photo
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -95,7 +95,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gym.project.domain.entity.GymCustomerPhoto">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gym.project.domain.gym.GymCustomerPhoto">
     <!--@mbg.generated-->
     update gym_customer_photo
     <set>
@@ -126,7 +126,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gym.project.domain.entity.GymCustomerPhoto">
+  <update id="updateByPrimaryKey" parameterType="com.gym.project.domain.gym.GymCustomerPhoto">
     <!--@mbg.generated-->
     update gym_customer_photo
     set customer_id = #{customerId,jdbcType=BIGINT},
